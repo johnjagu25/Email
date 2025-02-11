@@ -18,7 +18,6 @@
         <springdoc.version>2.7.0</springdoc.version>
         <spring-boot-maven-plugin.version>3.4.2</spring-boot-maven-plugin.version>
     </properties>
-
     <dependencies>
         <!-- Springdoc OpenAPI Dependency -->
         <dependency>
@@ -95,6 +94,16 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <apiDocsUrl>http://localhost:8080/v3/api-docs.yaml</apiDocsUrl>
+                    <!-- Request YAML format -->
+                    <outputFileName>openapi.yaml</outputFileName>
+                    <!-- Name of the output file -->
+                    <outputDir>${project.build.directory}</outputDir>
+                    <!-- Output directory -->
+                    <format>yaml</format>
+                    <!-- Ensure YAML format -->
+                </configuration>
             </plugin>
         </plugins>
     </build>
